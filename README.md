@@ -12,7 +12,6 @@ The goal is to write a breadcrumb file-browser component in react.
 The directory structure is below. This should only be available to the server, and not the client. The client may only access this structure via the /path call on your server. You may do any automated transformations you wish on this data structure to make it easier to work with, but the transformations should be automated (i.e.we should easily be able to replace it with another structure to test).
 
 <script>
-
 let root = {
 type: &#34;dir&#34;,
 children: {
@@ -47,7 +46,6 @@ type: &#34;file&#34;,
 }
 },
 }; 
-
 </script>
 
 ### Built With
