@@ -10,11 +10,10 @@ export default function Breadcrumb() {
   const [nextFileType, setNextFileType] = useState('')
 
   async function getPathFromServer(path) {
-
     const fetchOptions = {
       method: 'get',
     }
-    const result = await fetch(`/path/${path}`, fetchOptions).then(r => r.json())
+    const result = await fetch(`/path/${encodeURIComponent(path)}`, fetchOptions).then(r => r.json())
     if (result.type === '&#34;file&#34;') {
       setNextFiles(['no new files'])
     } else {
@@ -50,15 +49,15 @@ export default function Breadcrumb() {
           })}
         </ol>
       </nav>
-
-      {fileType && <h1>this is a {fileType}</h1>}
-      <h1> &#34;</h1>
+      <div className="container">
+      {/* {fileType && <h1>this is a {fileType}</h1>} */}
       {nextFiles && nextFiles.map((elementt, index) =>
         <div style={{ display: 'block' }} >
           <i class={(nextFileType[index]?.type === '&#34;file&#34;') ? "fa fa-file" : 'fa fa-folder'} style={{ fontSize: '24px' }}></i>
-          {(elementt === 'no new files') ? (<h1>This is a file</h1>) :
+          {(elementt === 'no new files') ? (<h3>THIS IS FILE: {files[files.length-1]}</h3>) :
             (<button onClick={(event) => { setPath(event.target.id) }} id={elementt} class={(nextFileType[index]?.type === '&#34;file&#34;') ? 'btn btn-danger m-3' : 'btn btn-primary m-3'}>{elementt}</button>)}
         </div>)}
+        </div>
 
     </div>
   )
