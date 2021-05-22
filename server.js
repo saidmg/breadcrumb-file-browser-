@@ -3,6 +3,10 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8080
 
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 if (process.env.NODE_ENV === 'production') {
     // for serving REACT production-build content
     app.use(express.static('client/build'))
