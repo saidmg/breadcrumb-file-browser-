@@ -1,12 +1,5 @@
 # breadcrumb-file-browser-
 
-
-<!-- PROJECT SHIELDS -->
-[![React Badge](https://img.shields.io/badge/-React-61DBFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DBFB)](#) [![Bootstrap Badge](https://img.shields.io/badge/-Bootstrap-5555ff?style=for-the-badge&labelColor=black&logo=bootstrap&logoColor=5555ff)](#) 
-[![NodeJs Badge](https://img.shields.io/badge/-NodeJs-brightgreen)](#) 
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
