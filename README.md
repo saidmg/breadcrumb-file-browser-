@@ -12,40 +12,42 @@ The goal is to write a breadcrumb file-browser component in react.
 The directory structure is below. This should only be available to the server, and not the client. The client may only access this structure via the /path call on your server. You may do any automated transformations you wish on this data structure to make it easier to work with, but the transformations should be automated (i.e.we should easily be able to replace it with another structure to test).
 
 ```js
+
 let root = {
-type: &#34;dir&#34;,
-children: {
-home: {
-type: &#34;dir&#34;,
-children: {
-myname: {
-type: &#34;dir&#34;,
-children: {
-&#34;filea.txt&#34;: {
-type: &#34;file&#34;,
-},
-"fileb.txt": {
-type: &#34;file&#34;,
-},
-"projects": {
-type: &#34;dir&#34;,
-children: {
-mysupersecretproject: {
-type: &#34;dir&#34;,
-children: {
-mysupersecretfile: {
-type: &#34;file&#34;,
-},
-},
-}
-},
-},
-}
-},
-},
-}
-},
-}; 
+    type: '&#34;dir&#34;',
+    children: {
+        home: {
+            type: '&#34;dir&#34;',
+            children: {
+                myname: {
+                    type: '&#34;dir&#34;',
+                    children: {
+                        '&#34;filea.txt&#34;': {
+                            type: '&#34;file&#34;',
+                        },
+                        "fileb.txt": {
+                            type: '&#34;file&#34;',
+                        },
+                        "projects": {
+                            type: '&#34;dir&#34;',
+                            children: {
+                                mysupersecretproject: {
+                                    type: '&#34;dir&#34;',
+                                    children: {
+                                        mysupersecretfile: {
+                                            type: '&#34;file&#34;',
+                                        },
+                                    },
+                                }
+                            },
+                        },
+                    }
+                },
+            },
+        }
+    },
+};
+
 ```
 
 ### Built With
