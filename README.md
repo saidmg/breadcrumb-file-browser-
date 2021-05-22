@@ -59,6 +59,9 @@ let root = {
 
 ### Screenshots
 
+![Capture](https://user-images.githubusercontent.com/71358869/119238838-17066580-bb13-11eb-9489-91a7da5cd601.JPG)
+
+![Capture2](https://user-images.githubusercontent.com/71358869/119238852-343b3400-bb13-11eb-9136-c5625da35d2e.JPG)
 
 
 
