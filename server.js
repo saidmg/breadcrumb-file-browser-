@@ -73,5 +73,5 @@ app.get('/path/:path', async function (req, res) {
 })
 
 app.listen(PORT, () => {
-    console.log(`==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT} in your browser.`);
+    console.log("server listening to port "+ PORT);
 });
