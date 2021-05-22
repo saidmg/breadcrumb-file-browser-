@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
 } else {
     // for serving all the normal html
-    app.use(express.static('public'))
+    app.use(express.static('client/public'))
 }
 
 let root = {
