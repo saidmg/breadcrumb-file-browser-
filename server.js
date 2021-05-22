@@ -3,10 +3,6 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8080
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
 if (process.env.NODE_ENV === 'production') {
     // for serving REACT production-build content
     app.use(express.static('client/build'))
@@ -67,15 +63,13 @@ function getthatpath(clicked, path = root['children']) {
 }
 app.get('/path/:path', async function (req, res) {
     let getPath = req.params.path
-    console.log('getpath',getPath)
     if (getPath == 'root') {
         res.send(eval(root))
     }
     await getthatpath(getPath)
-    console.log(nextPath)
     res.send(nextPath)
 })
 
 app.listen(PORT, () => {
-    console.log("server listening to port "+ PORT);
+    console.log("server listening to port " + PORT);
 });

@@ -5,7 +5,6 @@ export default function Breadcrumb() {
 
   const [path, setPath] = useState('root')
   const [files, setFiles] = useState([])
-  const [fileType, setFileType] = useState('')
   const [nextFiles, setNextFiles] = useState('')
   const [nextFileType, setNextFileType] = useState('')
 
@@ -20,7 +19,6 @@ export default function Breadcrumb() {
       setNextFiles(Object.keys(result.children))
       setNextFileType(Object.values(result.children))
     }
-    setFileType(result.type)
     setFiles([...files, path])
   }
 
@@ -31,13 +29,13 @@ export default function Breadcrumb() {
   }
 
   useEffect(() => {
-    console.log('path',path)
     getPathFromServer(path)
   }, [path])
 
   return (
     <div className="container">
-      <nav aria-label="breadcrumb">
+      <h1 className='title'>File Browser</h1>
+      <nav className="my-3" aria-label="breadcrumb">
         <ol class="breadcrumb">
           {files && files.map((elementt, index) => {
             return (
@@ -49,15 +47,14 @@ export default function Breadcrumb() {
           })}
         </ol>
       </nav>
-      <div className="container">
-      {/* {fileType && <h1>this is a {fileType}</h1>} */}
-      {nextFiles && nextFiles.map((elementt, index) =>
-        <div style={{ display: 'block' }} >
-          <i class={(nextFileType[index]?.type === '&#34;file&#34;') ? "fa fa-file" : 'fa fa-folder'} style={{ fontSize: '24px' }}></i>
-          {(elementt === 'no new files') ? (<h3>THIS IS FILE: {files[files.length-1]}</h3>) :
-            (<button onClick={(event) => { setPath(event.target.id) }} id={elementt} class={(nextFileType[index]?.type === '&#34;file&#34;') ? 'btn btn-danger m-3' : 'btn btn-primary m-3'}>{elementt}</button>)}
-        </div>)}
-        </div>
+      <div className="container m-3 bord">
+        {nextFiles && nextFiles.map((elementt, index) =>
+          <div style={{ display: 'block' }} >
+            <i class={(nextFileType[index]?.type === '&#34;file&#34;') ? "fa fa-file" : 'fa fa-folder'} style={{ fontSize: '24px' }}></i>
+            {(elementt === 'no new files') ? (<h3>THIS IS FILE: {files[files.length - 1]}</h3>) :
+              (<button onClick={(event) => { setPath(event.target.id) }} id={elementt} class={(nextFileType[index]?.type === '&#34;file&#34;') ? 'btn btn-danger m-3' : 'btn btn-primary m-3'}>{elementt}</button>)}
+          </div>)}
+      </div>
 
     </div>
   )
